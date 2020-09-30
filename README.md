@@ -20,46 +20,46 @@ ____
 * #### [VI(2) spawn shell](#vi2_spawn_shell)
 * #### [Nmap spawn shell](#nmap_spawn_shell)
 ### PHP Reverse Shell
-* #### RCE
-* #### Obfuscate PHP Web Shell
-* #### PHP Reverse Shell
+* #### [RCE](#rce)
+* #### [Obfuscate PHP Web Shell](#obfuscate_php_web_shell)
+* #### [PHP Reverse Shell](#php_reverse_shell)
 ### LFI
-* #### Directory traversal
-* #### PHP Wrapper php://file
-* #### PHP Wrapper php://filter
-* #### Useful LFI files (Linux)
-* #### Useful LFI files (Apache)
-* #### Useful LFI files (MySQL)
-* #### Useful LFI files (Windows)
+* #### [Directory Traversal](#directory_traversal)
+* #### [PHP Wrapper php://file](#php_wrapper_file)
+* #### [PHP Wrapper php://filter](#php_wrapper_filter)
+* #### [Useful LFI files (Linux)](#useful_lfi_linux)
+* #### [Useful LFI files (Apache)](#useful_lfi_apache)
+* #### [Useful LFI files (MySQL)](#useful_lfi_mysql)
+* #### [Useful LFI files (Windows)](#useful_lfi_windows)
 ### XSS
-* #### Data grabber for XSS
-* #### XSS in HTML/Applications
-  * ##### Basic Payload
-  * ##### Img tag payload
-* #### XSS in Markdown
-* #### XSS in SVG
-* #### Bypass word blacklist with code evaluation
+* #### [Data grabber for XSS](#data_grabber_xss)
+* #### [XSS in HTML/Applications](#xss_in_app)
+  * ##### [Basic Payload](#basic_payload)
+  * ##### [Img tag payload](#img_tag_payload)
+* #### [XSS in Markdown](#xss_in_markdown)
+* #### [XSS in SVG](#xss_in_svg)
+* #### [Bypass word blacklist with code evaluation](#bypass_word_blacklist_with_code_evaluation)
 ### SQL Injection Payloads
-* #### Generic SQL Injection
-* #### Time-Based
-* #### Generic Error Based Payloads
-* #### Authentication Based Payloads
-* #### Order by and UNION Based Payloads
+* #### [Generic SQL Injection](#generic_sql_injection)
+* #### [Time-Based](#time_based)
+* #### [Generic Error Based Payloads](#generic_error_based_payloads)
+* #### [Authentication Based Payloads](#authentication_based_payloads)
+* #### [Order by and UNION Based Payloads](#order_by_and_union_based_payloads)
 ### Useful Linux command
-* #### SUID Commands
-* #### System Version
-* #### Environment Variables
-* #### Service settings
-* #### Cron Jobs
-* #### Other Users
-* #### Port Forwarding
-* #### TAR wildcard cronjob privilege escalation
+* #### [SUID Commands](#suid_commands)
+* #### [System Version](#system_version)
+* #### [Environment Variables](#environment_variables)
+* #### [Service Settings](#service_settings)
+* #### [Cron Jobs](#cron_jobs)
+* #### [Other Users](#other_users)
+* #### [Port Forwarding](#port_forwarding)
+* #### [TAR Wildcard Cronjob Privilege Escalation](#tar_wildcard_cronjob_privilege_escalation)
 ### File Transfer
-* #### Bash Upload
-* #### Bash Download
-* #### Netcat
-* #### Python
-* #### SCP
+* #### [Bash Upload](#bash_upload)
+* #### [Bash Download](#bash_download)
+* #### [Netcat](#netcat)
+* #### [Python](#python)
+* #### [SCP](#scp)
 
 ____
 
