@@ -13,7 +13,7 @@ ____
 * #### [OS system spawn shell](#os_system_spawn_shell)
 * #### [Bash spawn shell](#bash_spawn_shell)
 * #### [Perl spawn shell](#perl_spawn_shell)
-* #### [Python spawn shell](#python_spawn_shell)
+* #### [Ruby spawn shell](#ruby_spawn_shell)
 * #### [Lua spawn shell](#lua_spawn_shell)
 * #### [IRB spawn shell](#irb_spawn_shell)
 * #### [VI spawn shell](#vi_spawn_shell)
@@ -96,3 +96,27 @@ ____
 
 ### TTY Spawn Shell > <a name="os_system_spawn_shell"></a>OS system spawn shell
 ###### echo os.system("/bin/bash")
+
+### TTY Spawn Shell > <a name="bash_spawn_shell"></a>Bash spawn shell
+###### /bin/sh -i
+
+### TTY Spawn Shell > <a name="perl_spawn_shell"></a>Perl spawn shell
+###### perl —e 'exec "/bin/sh";'
+
+### TTY Spawn Shell > <a name="ruby_spawn_shell"></a>Ruby spawn shell
+###### ruby: exec "/bin/sh"
+
+### TTY Spawn Shell > <a name="lua_spawn_shell"></a>Lua spawn shell
+###### lua: os.execute("/bin/sh")
+
+### TTY Spawn Shell > <a name="irb_spawn_shell"></a>IRB spawn shell
+###### exec "/bin/sh"
+
+### TTY Spawn Shell > <a name="vi_spawn_shell"></a>VI spawn shell
+###### :!bash
+
+### TTY Spawn Shell > <a name="vi2_spawn_shell"></a>VI(2) spawn shell
+###### :set shell=/bin/bash:shell
+
+### TTY Spawn Shell > <a name="nmap_spawn_shell"></a>Nmap spawn shell
+###### !sh
