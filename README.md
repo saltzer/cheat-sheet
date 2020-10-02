@@ -688,5 +688,5 @@ ____
 
 ### Credits
 #### PentestMonkey -- https://github.com/pentestmonkey
-#### GTFODINS      -- https://github.com/GTFOBins
-#### HackTools     -- https://github.com/LasCC/Hack-Tools
+#### GTFODINS -- https://github.com/GTFOBins
+#### HackTools -- https://github.com/LasCC/Hack-Tools
