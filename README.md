@@ -684,6 +684,7 @@ scp id_rsa username@10.10.164.167:~/destination -P 1337
 ```html
 scp user@10.10.164.167:~/path_to_file file_saved -P 1337
 ```
+____
 
 ### Credits
 #### PentestMonkey -- https://github.com/pentestmonkey
