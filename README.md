@@ -698,7 +698,7 @@ echo "unset HISTFILE" | sudo tee /etc/profile.d/unset_histfile.sh
 ```html
 echo "HISTSIZE=0" | sudo tee /etc/profile.d/disable_histsize.sh
 ```
-* #### [Linux Logs](#linux_logs)
+### Traces of stay in the system > <a name="linux_logs"></a>Linux Logs
 ###### binary files
 ```html
 /var/run/utmp -- current connections to the system
